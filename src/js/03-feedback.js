@@ -45,6 +45,10 @@ function updateOutput() {
 form.addEventListener('submit', submitForm);
 
 function submitForm(event) {
+  if (input.value === '') {
+    alert('ЗАПОВНІТЬ ПОЛЯ !!!');
+    return;
+  }
   event.preventDefault();
   const locall = localStorage.getItem(STORAGE_KEY);
   const locallPars = JSON.parse(locall);
