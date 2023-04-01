@@ -40,12 +40,11 @@ function updateOutput() {
   //   form.elements.message.value = locallPars.message || '';
   //   console.log(locallPars.message);
 }
+
 form.addEventListener('submit', submitForm);
 
 function submitForm(event) {
+  event.preventDefault();
+  console.log(localStorage.getItem(STORAGE_KEY));
   localStorage.clear();
-  console.log(
-    (locallPars.email = email.value),
-    (locallPars.message = message.value)
-  );
 }
